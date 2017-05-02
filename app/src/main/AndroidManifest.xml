@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wildcat.mad_vureserve">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission> />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +22,13 @@
         <activity android:name=".FindRoomActivity" />
         <activity android:name=".FindRoomActivity2" />
         <activity android:name=".ManageReservationsActivity" />
-        <activity android:name=".ReportProblemActivity"></activity>
+        <activity android:name=".ReportProblemActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".CheckInActivity" />
+
+
+
+        <activity android:name=".ThankYouActivity"></activity>
     </application>
 
 </manifest>

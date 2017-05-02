@@ -1,9 +1,21 @@
 package com.example.wildcat.mad_vureserve;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.Formatter;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -31,6 +43,13 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void toCheckInActivity(View view){
+        Intent intent = new Intent(this, CheckInActivity.class);
+        startActivity(intent);
+
+    }
+
 
 
 }
