@@ -7,45 +7,63 @@
     tools:context="com.example.wildcat.mad_vureserve.CheckInActivity">
 
     <TextView
+        android:id="@+id/textView11"
+        android:layout_width="201dp"
+        android:layout_height="151dp"
+        android:text="Bartley 0103 \n\n 3:00 - 4:00 \n"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFinalConfirm"
+        app:layout_constraintLeft_toRightOf="@+id/buttonFinalConfirm"
+        app:layout_constraintRight_toLeftOf="@+id/buttonFinalConfirm"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginBottom="8dp"
+        tools:layout_editor_absoluteY="152dp" />
+
+    <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="77dp"
+        android:layout_width="372dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="16dp"
         android:text="Reservation Check In"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="38dp" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="342dp"
-        android:layout_height="117dp"
+        android:layout_width="344dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text='Click "Confirm My Reservation" to check into your current reservation.'
+        android:text="Here is your next reservation..."
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.692"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <Button
         android:id="@+id/buttonFinalConfirm"
         android:layout_width="338dp"
         android:layout_height="130dp"
-        android:layout_marginBottom="147dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="Confirm My Reservation"
+        android:layout_marginStart="8dp"
         android:onClick="getIpAddress"
+        android:text="Check In to Your Room"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintRight_toRightOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

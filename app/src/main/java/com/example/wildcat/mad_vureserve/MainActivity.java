@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*public void toLogin(View v) {
+   /* public void toLogin(View v) {
         if (v.getId() == R.id.button) {
             EditText username = (EditText) findViewById(R.id.editUserText);
             String userstr = username.getText().toString();
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             //i.putExtra("name", string);
             //startActivity(i);
         }
-    }*/
+    } */
 
     public void toLogin(View v) {
         String username = editUserText.getText().toString();
@@ -55,11 +55,8 @@ public class MainActivity extends AppCompatActivity {
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);
 
-        
+
     }
-
-
-
 
     /*public void toSignUp(View v){
         if (v.getId() == R.id.buttonSignUp) {

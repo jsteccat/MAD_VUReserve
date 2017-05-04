@@ -38,6 +38,5 @@ public class FindRoomActivity2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please Select a Reservation", Toast.LENGTH_SHORT).show();
         }
 
-
     }
 }

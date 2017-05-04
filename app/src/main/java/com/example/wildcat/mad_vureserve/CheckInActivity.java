@@ -21,9 +21,9 @@ public class CheckInActivity extends AppCompatActivity {
         WifiManager wm = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         StringBuilder iptoast = new StringBuilder();
-        iptoast.append("IP Address ");
+        iptoast.append("Your IP Address ");
         iptoast.append(ip);
-        iptoast.append(" Confirmed!");
+        iptoast.append(" is confirmed for your room.");
 
 
         Toast temp = Toast.makeText(CheckInActivity.this, iptoast, Toast.LENGTH_SHORT);

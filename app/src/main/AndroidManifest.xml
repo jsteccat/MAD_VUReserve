@@ -18,17 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu" />
-        <activity android:name=".FindRoomActivity" />
-        <activity android:name=".FindRoomActivity2" />
-        <activity android:name=".ManageReservationsActivity" />
-        <activity android:name=".ReportProblemActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".CheckInActivity" />
+        <activity android:name=".MainMenu" android:exported="true"/>
+        <activity android:name=".FindRoomActivity" android:exported="true"/>
+        <activity android:name=".FindRoomActivity2" android:exported="true"/>
+        <activity android:name=".ManageReservationsActivity" android:exported="true"/>
+        <activity android:name=".ReportProblemActivity" android:exported="true" />
+        <activity android:name=".SignUpActivity" android:exported="true"/>
+        <activity android:name=".CheckInActivity" android:exported="true" />
+        <activity android:name=".ThankYouActivity" android:exported="true"></activity>
 
-
-
-        <activity android:name=".ThankYouActivity"></activity>
     </application>
 
 </manifest>

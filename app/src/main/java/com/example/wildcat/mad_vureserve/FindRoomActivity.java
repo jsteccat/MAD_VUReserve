@@ -30,7 +30,6 @@ public class FindRoomActivity extends AppCompatActivity {
 
     public void toFindRoom2(View view){
 
-
         editDate = (EditText) findViewById(R.id.editDate);
         date = editDate.getText().toString();
         editTimeStart = (EditText) findViewById(R.id.editTimeStart);
@@ -43,8 +42,8 @@ public class FindRoomActivity extends AppCompatActivity {
 
 
         Intent intent = new Intent(this, FindRoomActivity2.class);
-        intent.putExtra("date",date);
-        intent.putExtra("start_time",startTime);
+   //     intent.putExtra("date",date);
+   //     intent.putExtra("start_time",startTime);
         startActivity(intent);
     }
 }

@@ -7,7 +7,7 @@
     tools:context="com.example.wildcat.mad_vureserve.FindRoomActivity2">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginBtn"
         android:layout_width="368dp"
         android:layout_height="45dp"
         android:text="Make Reservation"
@@ -45,7 +45,7 @@
         android:orientation="vertical"
         android:weightSum="1"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/linearLayout"
@@ -91,7 +91,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -101,7 +101,7 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bartley 0023 \n\n 3:00 - 4:00 \n"
+            android:text="Bartley 0023 \n\n 3:00 pm - 4:00 pm\n"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -109,7 +109,7 @@
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bartley 0103 \n\n 3:00 - 4:00 \n"
+            android:text="Bartley 0103 \n\n 3:00 pm - 4:00 pm\n"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -117,7 +117,7 @@
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bartley 1046 \n\n 3:00 - 4:00 \n"
+            android:text="Bartley 1046 \n\n 3:00 pm - 4:00 pm\n"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
