@@ -54,17 +54,18 @@ public class MainActivity extends AppCompatActivity {
         String type = "login";
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, username, password);
+
         
     }
 
 
 
 
-    public void toSignUp(View v){
+    /*public void toSignUp(View v){
         if (v.getId() == R.id.buttonSignUp) {
             Intent i = new Intent(MainActivity.this, SignUpActivity.class);
             startActivity(i);
         }
-    }
+    }*/
 }
 

@@ -2,7 +2,9 @@ package com.example.wildcat.mad_vureserve;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -32,7 +34,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://10.135.28.55:80/login.php";
+        String login_url = "http://192.168.1.151:80/login.php";
+        String register_url = "http://192.168.1.151:80/register.php";
+        String find_slots_url = "http://192.168.151:80/findslots.php";
         if(type.equals("login")) {
             try {
                 String user_name = params[1];
@@ -66,6 +70,78 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
             }catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if(type.equals("register")){
+            try {
+                String name = params[1];
+                String username = params[2];
+                String email = params[3];
+                String password = params[4];
+                URL url = new URL(register_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"
+                        +URLEncoder.encode("user_user","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"
+                        +URLEncoder.encode("user_email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
+                        +URLEncoder.encode("user_pass","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                String result = "";
+                String line;
+                while((line = bufferedReader.readLine())!= null){
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            }catch (MalformedURLException e) {
+                e.printStackTrace();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(type.equals("find_slots")){
+                try {
+                    String date = params[1];
+                    String timeStart = params[2];
+                    String timeEnd = params[3];
+                    URL url = new URL(find_slots_url);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setRequestMethod("POST");
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.setDoInput(true);
+                    OutputStream outputStream = httpURLConnection.getOutputStream();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    String post_data = URLEncoder.encode("date","UTF-8")+"="+URLEncoder.encode(date,"UTF-8")+"&"
+                            +URLEncoder.encode("timeStart","UTF-8")+"="+URLEncoder.encode(timeStart,"UTF-8")+"&"
+                            +URLEncoder.encode("timeEnd","UTF-8")+"="+URLEncoder.encode(timeEnd,"UTF-8");
+                    bufferedWriter.write(post_data);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                    outputStream.close();
+                    InputStream inputStream = httpURLConnection.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                    String result = "";
+                    String line;
+                    while((line = bufferedReader.readLine())!= null){
+                        result += line;
+                    }
+                    bufferedReader.close();
+                    inputStream.close();
+                    httpURLConnection.disconnect();
+                    return result;
+                }catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
         return null;
     }
@@ -78,8 +154,18 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     @Override
     protected void onPostExecute(String result){
-        alertDialog.setMessage(result);
-        alertDialog.show();
+        //alertDialog.setMessage(result);
+        //alertDialog.show();
+
+        if (result.equals("login success")){
+            //alertDialog.setMessage("Great Success!");
+            //alertDialog.show();
+            Toast.makeText(context, "Great Success", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(context,MainMenu.class);
+            context.startActivity(i);
+        }else{
+            Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
