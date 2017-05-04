@@ -34,7 +34,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://192.168.1.151:80/login.php";
+        String login_url = "http://10.135.13.50:80/login.php";
         String register_url = "http://192.168.1.151:80/register.php";
         String find_slots_url = "http://192.168.151:80/findslots.php";
         if(type.equals("login")) {
@@ -160,11 +160,11 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         if (result.equals("login success")){
             //alertDialog.setMessage("Great Success!");
             //alertDialog.show();
-            Toast.makeText(context, "Great Success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "You successfully logged in!", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(context,MainMenu.class);
             context.startActivity(i);
         }else{
-            Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Login failed. Please retry.", Toast.LENGTH_SHORT).show();
         }
 
     }
